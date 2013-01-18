@@ -1,7 +1,7 @@
 WelcomePageView = Backbone.View.extend({
         initialize: function(){
             //Do Nothing
-        },
+         },
         events: {
             'click #specialButton':'testEvent'
         },
@@ -9,6 +9,7 @@ WelcomePageView = Backbone.View.extend({
         navBarTemplate:EJSNavBarTemplate,
         testEvent: function(e){
             alert('Event Trigger Successful');
+            Ti.App.fireEvent('debugLog');
         },
         render: function(){
             $(this.el).html(this.template.render());

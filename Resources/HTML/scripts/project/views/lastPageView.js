@@ -1,7 +1,7 @@
 LastPageView = Backbone.View.extend({
         initialize: function(){
             //Do Nothing
-        },
+         },
         events: {
             //Insert events here e.g. button id in template is #btnNav
             //"click #btnNav":"functionName"

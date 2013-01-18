@@ -8,6 +8,7 @@ $(document).bind("mobileinit", function () {
     $.mobile.loader.prototype.options.theme = "c";
     // Remove page from DOM when it's being replaced
     $('div[data-role="page"]').live('pagehide', function (event, ui) {
-        $(event.currentTarget).remove();
+       $(event.currentTarget).remove();
+       
     });
 });
