@@ -38,6 +38,8 @@ function BtnNav(arg) {
 		Ti.API.info('BtnNav is clicked');
 		Ti.App.fireEvent('from:BtnNav',{origin:e.source.id});
 	});
+	
+	
 	return self;
 }
 

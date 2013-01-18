@@ -5,11 +5,10 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.164637 seconds on emulator to get ready
+[DEBUG] waited 0.020446 seconds on emulator to get ready
 [DEBUG] com.goingenious.ingenious installed? False
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: /Users/alex/Documents/TitaniumStudioWorkspace/InGeniousMobileWrapper/Resources/HTML/scripts/project/app.js => /Users/alex/Documents/TitaniumStudioWorkspace/InGeniousMobileWrapper/build/android/bin/assets/Resources/HTML/scripts/project/app.js
 [TRACE] COPYING MODIFIED FILE: /Users/alex/Documents/TitaniumStudioWorkspace/InGeniousMobileWrapper/Resources/HTML/scripts/project/titaniumBridge.js => /Users/alex/Documents/TitaniumStudioWorkspace/InGeniousMobileWrapper/build/android/bin/assets/Resources/HTML/scripts/project/titaniumBridge.js
 [TRACE] Generating Java Classes
 [DEBUG] Processing Android resource drawables
@@ -123,6 +122,12 @@ Logfile initialized
 [DEBUG] from JAR /Users/alex/Library/Application Support/Titanium/mobilesdk/osx/3.0.0.GA/android/titanium.jar => org/appcelerator/titanium/res/drawable/photoDefault.png
 [DEBUG] installing native SDK libs
 [DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.016799 seconds on emulator to get ready
+[INFO] Installing application on device
+[INFO] Application installed. Launch from drawer on Home Screen
+to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
 [DEBUG] waited 0.016822 seconds on emulator to get ready

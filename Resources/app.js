@@ -23,15 +23,10 @@ if (Ti.version < 1.8 ) {
 	var isTablet = osname === 'ipad' || (osname === 'android' && (width > 899 || height > 899));
 	
 	var Window;
-	if (isTablet) {
-		Window = require('ui/tablet/ApplicationWindow');
-	}
-	else {
-		if (osname === 'android') {
-			Window = require('ui/handheld/android/ApplicationWindow');
-		} else {
-			Window = require('ui/handheld/ApplicationWindow');
-		}
+	if (osname === 'android') {
+		Window = require('ui/handheld/android/ApplicationWindow');
+	} else {
+		Window = require('ui/handheld/ApplicationWindow');
 	}
 	
 	var actIndicator = require('ui/common/global/ActIndicator');
@@ -85,6 +80,7 @@ if (Ti.version < 1.8 ) {
 	});
 	
 	Ti.App.addEventListener('debugLog', function(e){
-		Ti.API.info(e.log);
+		alert('ok');
+		//Ti.API.info(e.log);
 	});	
 })();
