@@ -1,6 +1,14 @@
-Welcome to your Appcelerator Titanium Mobile Project
+Welcome to TitaniumAlaPhoneGap Sample Project Build from Appcelerator Titanium Mobile Project
 
-This is a single window application with a single view - a mostly blank canvas. Requires Titanium Mobile SDK 1.8.0+
+- I have successful, implement a work around and identified the root of the javascript event problem.
+It turns out backbone.js will destroy all delegate on page change rendering the Ti.App.addEventListener useless
+in Android. To work around, I script inject into memory an Ti.App.addEventListener.
+
+To get it working For IOS device, you must first rename all js files (skip the ejs) to jsf or as file (as long is not
+JS - for some reason the builder takes the js files and compiles it into other form).
+
+Dont forget to reflect it at index.html
+
 
 ----------------------------------
 Stuff our legal folk make us say:

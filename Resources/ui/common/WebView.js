@@ -8,20 +8,13 @@ function WebView() {
 		bottom:"45dip",
 		top:"45dip"
 	});
+	
+	var JSString = "Ti.App.addEventListener('from:BtnNav', function(e){ TitaniumBridge.changeRoute(e.origin) });";
 	self.addEventListener('load', function(e){
 		Ti.App.fireEvent('domAllLoaded');
-		
-		/*
-		var scriptTxt = "Ti.App.addEventListener('from:BtnNav', function(e){";
-		scriptTxt += "alert('ok')";
-		scriptTxt +=  "})";
-		self.evalJS(scriptTxt);
-		*/
+		self.evalJS(JSString);
 	});
 	
-	self.addEventListener('from:BtnNav', function(e){
-		self.evalJS('TitaniumBridge.changeRoute('+e.source.id+');')
-	});
 	return self;
 }
 

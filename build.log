@@ -5,7 +5,7 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.020446 seconds on emulator to get ready
+[DEBUG] waited 0.017659 seconds on emulator to get ready
 [DEBUG] com.goingenious.ingenious installed? False
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
@@ -82,6 +82,7 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/app.js
 [DEBUG] from resource zip => assets/Resources/appicon.png
 [DEBUG] from resource zip => assets/Resources/default.png
+[DEBUG] from resource zip => assets/Resources/titaniumBridge.js
 [DEBUG] from resource zip => assets/app.json
 [DEBUG] from resource zip => assets/index.json
 [DEBUG] from resource zip => assets/tiapp.xml
@@ -124,11 +125,10 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.016799 seconds on emulator to get ready
+[DEBUG] waited 0.021486 seconds on emulator to get ready
 [INFO] Installing application on device
 [INFO] Application installed. Launch from drawer on Home Screen
-to be ready ...
-[TRACE] adb devices returned 1 devices/emulators
+
 [DEBUG] Device connected... (waited 0 seconds)
 [DEBUG] waited 0.016822 seconds on emulator to get ready
 [INFO] Installing application on device
