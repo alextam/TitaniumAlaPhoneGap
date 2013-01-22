@@ -20,6 +20,7 @@ function BtnNav(arg) {
 		top:"5dip",
 		borderWidth: 2, 
 		borderRadius: 6,
+		//visible:false,
 		backgroundImage:'none',
 		backgroundColor:'#6699CC'
 	});
@@ -37,8 +38,7 @@ function BtnNav(arg) {
 	self.addEventListener('click', function(e){
 		Ti.API.info('BtnNav is clicked');
 		Ti.App.fireEvent('from:BtnNav',{origin:e.source.id});
-	});
-	
+ 	});
 	
 	return self;
 }

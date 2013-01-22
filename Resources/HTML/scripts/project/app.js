@@ -7,7 +7,7 @@ var AppRouter = Backbone.Router.extend({
     },
 
     initialize:function () {
-        // Handle back button throughout the application
+        // Handle back button throughout the Application
         var self = this; 
         this.firstPage = true;
     },
@@ -33,18 +33,18 @@ var AppRouter = Backbone.Router.extend({
         page.render();
         $('body').append($(page.el));
         var transition = $.mobile.defaultPageTransition;
-        // We don't want to slide the first page
+        // We don't want to slide the first page.
         if (this.firstPage) {
             transition = 'none';
             this.firstPage = false;
         }
-
         $.mobile.changePage($(page.el), {changeHash:false, transition: transition});
     }
 
 });
 
 $(document).ready(function () {
-   app = new AppRouter();
-   Backbone.history.start();   
+   	app = new AppRouter();
+   	Backbone.history.start();
+   	TitaniumBridge.initRoute(); 
 });

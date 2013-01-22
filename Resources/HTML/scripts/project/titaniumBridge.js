@@ -1,10 +1,19 @@
 var TitaniumBridge = {};
 
 (function(){
-	//var AppBtnNavRoute = [];
-	TitaniumBridge.changeRoute = function (url){
-	 	if (typeof Ti !="undefined") {
-	 		alert('url');
+	TitaniumBridge.initRoute = function (){
+		var AppBtnNavRoute = [
+		{
+			btnNavRight:"#welcome"
+		},
+		{
+			btnNavLeft:"#",
+			btnNavRight:"#last"
+		},
+		{
+			btnNavLeft:"#welcome"
 		}
-	}
+		];
+	 	Ti.App.fireEvent('initWebClient', {navRoute:AppBtnNavRoute});
+	};
 })();

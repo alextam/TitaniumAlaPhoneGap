@@ -1,16 +1,12 @@
 /****************************************************************************************
  * goIngenious Titanium Mobile Wrapper Window Application Template:
- * A basic starting point for your application.  Mostly a blank canvas.
+ * A basic starting point for your application. 
  * 
- * In app.js, we generally take care of a few things:
- * - Bootstrap the application with any data we need
- * - Check for dependencies like device type, platform version or network connection
- * - Require and open our top-level UI component
- *  
  *****************************************************************************************/
 
 //bootstrap and check dependencies
 if (Ti.version < 1.8 ) {
+	//Bootstrap to avoid older sdk from compiling.
 	alert('Sorry - this application template requires Titanium Mobile SDK 1.8 or later');	  	
 }
 
@@ -48,8 +44,8 @@ if (Ti.version < 1.8 ) {
 		appActIndicator.hide();
 	});
 	
-	// Web Developers can issue commands to control btnNav Elements
-	Ti.App.addEventListener('command', function(e){
+	// Web Developers can issue fireEvent commands to control btnNav Elements
+	Ti.App.addEventListener('exec', function(e){
 		switch(e.param){
 			case "btnNavLeftHide":
 				appBtnNavLeft.hide();
@@ -80,7 +76,6 @@ if (Ti.version < 1.8 ) {
 	});
 	
 	Ti.App.addEventListener('debugLog', function(e){
-		alert('ok');
-		//Ti.API.info(e.log);
+		Ti.API.info(e);
 	});	
 })();
