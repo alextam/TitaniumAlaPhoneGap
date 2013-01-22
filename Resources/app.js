@@ -47,35 +47,30 @@ if (Ti.version < 1.8 ) {
 	// Web Developers can issue fireEvent commands to control btnNav Elements
 	Ti.App.addEventListener('exec', function(e){
 		switch(e.param){
-			case "btnNavLeftHide":
-				appBtnNavLeft.hide();
+			case "navControlUpdate":
+				navControlUpdate(e.index);
 			break;
 			
-			case "btnNavRightHide":
-				appBtnNavRight.hide();
-			break;
-			
-			case "btnNavRightShow":
-				appBtnNavRight.show();
-			break;
-			
-			case "btnNavLeftShow":
-				appBtnNavLeft.show();
-			break;
-			
-			case "btnNavHideBoth":
-				appBtnNavRight.hide();
-				appBtnNavLeft.hide();
-			break;
-			
-			case "btnNavShowBoth":
-				appBtnNavRight.show();
-				appBtnNavLeft.show();
-			break;
 		}
 	});
 	
 	Ti.App.addEventListener('debugLog', function(e){
 		Ti.API.info(e);
 	});	
+	
+	function navControlUpdate (param){
+		//Reads properties settings and update navControlButtons.
+		var AppNavRoute = Ti.App.Properties.getList('navRoute');
+		if (AppNavRoute[param].btnNavLeft == null){
+			appBtnNavLeft.hide();	
+		} else {
+			appBtnNavLeft.show();
+		}
+		
+		if (AppNavRoute[param].btnNavRight == null){
+			appBtnNavRight.hide();	
+		} else {
+			appBtnNavRight.show();
+		}
+	}
 })();

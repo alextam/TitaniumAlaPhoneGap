@@ -20,7 +20,7 @@ function BtnNav(arg) {
 		top:"5dip",
 		borderWidth: 2, 
 		borderRadius: 6,
-		//visible:false,
+		visible:false,
 		backgroundImage:'none',
 		backgroundColor:'#6699CC'
 	});
