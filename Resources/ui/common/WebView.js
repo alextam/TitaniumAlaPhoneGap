@@ -13,10 +13,16 @@ function WebView() {
 		Ti.App.fireEvent('domAllLoaded');
 	});
 	
-	Ti.App.addEventListener('initWebClient', function( e ){
+	Ti.App.addEventListener('deviceReady', function( e ){
 		Ti.App.Properties.setInt( 'currentIndex', 0 );
 		Ti.App.Properties.setList( 'navRoute', e.navRoute );
 		Ti.App.fireEvent('initNav');
+	});
+	
+	Ti.App.addEventListener('sendToWebView', function(e){
+		// TitaniumBridge.receiveCallBack
+		// var callBackFuncStr = String( e.callback + "("+e.param+")");
+		self.evalJS('TitaniumBridge.receiveCallBack("'+e.param+'")');
 	});
 	
 	Ti.App.addEventListener('initNav', function(e){
@@ -27,8 +33,6 @@ function WebView() {
 				case "btnNavLeft":
 					var currentIndex = Ti.App.Properties.getInt('currentIndex');
 					var navRoute = Ti.App.Properties.getList('navRoute');
-					Ti.API.info("currentIndex : "+currentIndex);
-					Ti.API.info("section : "+JSON.stringify(navRoute[currentIndex]));
 					
 					if (navRoute[currentIndex].btnNavLeft != null ){
 						self.evalJS('window.location="'+String(navRoute[currentIndex].btnNavLeft)+'"');
@@ -44,8 +48,6 @@ function WebView() {
 				case "btnNavRight":
 					var currentIndex = Ti.App.Properties.getInt('currentIndex');
 					var navRoute = Ti.App.Properties.getList('navRoute');
-					Ti.API.info("currentIndex : "+currentIndex);
-					Ti.API.info("section : "+JSON.stringify(navRoute[currentIndex]));
 					
 					if (navRoute[currentIndex].btnNavRight != null ){
 						self.evalJS('window.location="'+String(navRoute[currentIndex].btnNavRight)+'"');

@@ -54,6 +54,31 @@ if (Ti.version < 1.8 ) {
 			case "debugLog":
 				Ti.API.info(e.log);	
 			break;
+			
+			case "getCamera":
+				Titanium.Media.showCamera({
+				    success:function(event){
+				        var cropRect = event.cropRect;
+				        var image    = event.media;
+				 		var imgString = Ti.Utils.base64encode(image.toString());
+				       	Ti.App.fireEvent('sendToWebView',{param:imgString,callback:e.callback});
+				    },
+				    cancel:function(){
+				 		// Do Nothing
+				    },
+				    error:function(error){
+				        // create alert
+				        var alertMsg = Titanium.UI.createAlertDialog({title:'Camera'});
+				        if (error.code == Titanium.Media.NO_CAMERA){
+				            alertMsg.setMessage('Device does not have video recording capabilities');
+				        }else{
+				            alertMsg.setMessage('Unexpected error: ' + error.code);
+				        }
+				        alertMsg.show();
+				    },
+				    allowEditing:true
+				});
+			break;
 		}
 	});
 	

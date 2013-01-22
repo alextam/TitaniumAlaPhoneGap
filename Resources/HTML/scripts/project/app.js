@@ -47,13 +47,17 @@ $(document).ready(function () {
    	app = new AppRouter();
    	Backbone.history.start();
    	TitaniumBridge.initRoute(); 
-
-    TitaniumBridge.ajax('http://10.2.1.218:3000/checkNCD',{data:'text'}, onSuccess,onFail);
+	
+	/* 
+	TEST Internal WebView Ajax
+	 
+    TitaniumBridge.ajax('http://localhost',{data:'text'}, onSuccess,onFail);
     function onSuccess(e){
-        alert('OK');
+        console.log('OK');
     }
 
     function onFail(){
-        alert('FAILED');
+        console.log('FAILED');
     }
+    */
 });

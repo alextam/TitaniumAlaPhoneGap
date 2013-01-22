@@ -5,10 +5,16 @@ IndexPageView = Backbone.View.extend({
         events: {
             //Insert events here e.g. button id in template is #btnNav
             //"click #btnNav":"functionName"
+            "click #getCam": "callGetCamera"
         },
      	template:EJSHomeTemplate,
         navBarTemplate:EJSNavBarTemplate,
-
+        callGetCamera: function(){
+            TitaniumBridge.getCamera(this,this.getCameraData);
+        },
+        getCameraData: function(data){
+            alert("getCamera: "+data);
+        },
         render: function(){
             $(this.el).html(this.template.render());
             // This is how you pass in values to your template in json format.
