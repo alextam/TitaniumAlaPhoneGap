@@ -44,19 +44,18 @@ if (Ti.version < 1.8 ) {
 		appActIndicator.hide();
 	});
 	
-	// Web Developers can issue fireEvent commands to control btnNav Elements
+	// Web Developers can issue fireEvent commands to control stuff
 	Ti.App.addEventListener('exec', function(e){
 		switch(e.param){
 			case "navControlUpdate":
 				navControlUpdate(e.index);
 			break;
 			
+			case "debugLog":
+				Ti.API.info(e.log);	
+			break;
 		}
 	});
-	
-	Ti.App.addEventListener('debugLog', function(e){
-		Ti.API.info(e);
-	});	
 	
 	function navControlUpdate (param){
 		//Reads properties settings and update navControlButtons.
