@@ -22,7 +22,7 @@ if (Ti.version < 1.8 ) {
 	if (osname === 'android') {
 		Window = require('ui/handheld/android/ApplicationWindow');
 	} else {
-		Window = require('ui/handheld/ApplicationWindow');
+		Window = require('ui/handheld/ios/ApplicationWindow');
 	}
 	
 	var actIndicator = require('ui/common/global/ActIndicator');
@@ -56,6 +56,8 @@ if (Ti.version < 1.8 ) {
 			break;
 			
 			case "getCamera":
+				/*
+				 * Ti.Media.showCamera
 				Titanium.Media.showCamera({
 				    success:function(event){
 				        var cropRect = event.cropRect;
@@ -77,6 +79,33 @@ if (Ti.version < 1.8 ) {
 				        alertMsg.show();
 				    },
 				    allowEditing:true
+				});
+				*/
+			break;
+			
+			case "getGPS":
+				Titanium.Geolocation.accuracy = Titanium.Geolocation.ACCURACY_BEST;
+				Titanium.Geolocation.distanceFilter = 10;
+ 
+				Titanium.Geolocation.getCurrentPosition(function(e){
+				    if (e.error)
+				    {
+				        console.log('HFL cannot get your current location');
+				        return;
+				    }
+				 	/*
+				    var longitude = e.coords.longitude;
+				    var latitude = e.coords.latitude;
+				    var altitude = e.coords.altitude;
+				    var heading = e.coords.heading;
+				    var accuracy = e.coords.accuracy;
+				    var speed = e.coords.speed;
+				    var timestamp = e.coords.timestamp;
+				    var altitudeAccuracy = e.coords.altitudeAccuracy;
+				    */
+				    var returnedResult = JSON.stringify(e.coords);
+				 	Ti.App.fireEvent('sendToWebView',{param:returnedResult,callback:e.callback});
+				    
 				});
 			break;
 		}

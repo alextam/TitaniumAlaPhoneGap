@@ -13,16 +13,16 @@ var TitaniumBridge = {};
 	TitaniumBridge.initRoute = function (){
 		// Use initWebClient to initiate handshake device Ready
 		var AppBtnNavRoute = [
-		{
-			btnNavRight:"#welcome"
-		},
-		{
-			btnNavLeft:"#",
-			btnNavRight:"#last"
-		},
-		{
-			btnNavLeft:"#welcome"
-		}
+			{
+				btnNavRight:"#welcome"
+			},
+			{
+				btnNavLeft:"#",
+				btnNavRight:"#last"
+			},
+			{
+				btnNavLeft:"#welcome"
+			}
 		];
 		
 		if( TitaniumBridge.checkTi() ) {
@@ -56,6 +56,15 @@ var TitaniumBridge = {};
 				callBack.call(viewObj,data);
 			};
 			Ti.App.fireEvent('exec', {param:'getCamera'});
+		} 
+	};
+	
+	TitaniumBridge.getGPS = function(viewObj,callBack){
+		if( TitaniumBridge.checkTi() ) {
+			TitaniumBridge.receivedFunction = function(data){
+				callBack.call(viewObj,data);
+			};
+			Ti.App.fireEvent('exec', {param:'getGPS'});
 		} 
 	};
 

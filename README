@@ -4,6 +4,8 @@ Welcome to TitaniumAlaPhoneGap Sample Project Build from Appcelerator Titanium M
 It turns out backbone.js will destroy all delegate on page change rendering the Ti.App.addEventListener useless
 in Android. To work around, I script inject into memory an Ti.App.addEventListener.
 
+One major bug faced in IOS need to investigate why gps, and media.camera is undefined in IOS.
+
 To get it working For IOS device, you must first rename all js files (skip the ejs) to jsf or as file (as long is not
 JS - for some reason the builder takes the js files and compiles it into other form).
 

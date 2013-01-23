@@ -20,9 +20,9 @@ function WebView() {
 	});
 	
 	Ti.App.addEventListener('sendToWebView', function(e){
-		// TitaniumBridge.receiveCallBack
-		// var callBackFuncStr = String( e.callback + "("+e.param+")");
-		self.evalJS('TitaniumBridge.receiveCallBack("'+e.param+'")');
+		// All object must be stringify before fireEvent starts
+		var payLoad = String(e.param);
+		self.evalJS('TitaniumBridge.receiveCallBack('+payLoad+')');
 	});
 	
 	Ti.App.addEventListener('initNav', function(e){

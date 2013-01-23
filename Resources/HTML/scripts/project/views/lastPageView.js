@@ -4,9 +4,15 @@ LastPageView = Backbone.View.extend({
          },
         events: {
             //Insert events here e.g. button id in template is #btnNav
-            //"click #btnNav":"functionName"
+            "click #callGPS":"callGPS"
         },
-     	template:EJSLastTemplate,
+        callGPS: function(){
+        	TitaniumBridge.getGPS(this,this.getGPS);	
+        },
+        getGPS: function(data){
+        	alert(JSON.stringify(data));
+        },
+        template:EJSLastTemplate,
         navBarTemplate:EJSNavBarTemplate,
 
         render: function(){

@@ -5,11 +5,11 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.019456 seconds on emulator to get ready
+[DEBUG] waited 0.017759 seconds on emulator to get ready
 [DEBUG] com.goingenious.ingenious installed? False
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: /Users/alex/Documents/TitaniumStudioWorkspace/InGeniousMobileWrapper/Resources/ui/common/WebView.js => /Users/alex/Documents/TitaniumStudioWorkspace/InGeniousMobileWrapper/build/android/bin/assets/Resources/ui/common/WebView.js
+[TRACE] COPYING MODIFIED FILE: /Users/alex/Documents/TitaniumStudioWorkspace/InGeniousMobileWrapper/Resources/HTML/scripts/project/views/lastPageView.js => /Users/alex/Documents/TitaniumStudioWorkspace/InGeniousMobileWrapper/build/android/bin/assets/Resources/HTML/scripts/project/views/lastPageView.js
 [TRACE] Generating Java Classes
 [DEBUG] Processing Android resource drawables
 [DEBUG] copying app icon: /Users/alex/Documents/TitaniumStudioWorkspace/InGeniousMobileWrapper/build/android/bin/assets/Resources/appicon.png
@@ -75,7 +75,7 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/ui/common/TabView.js
 [DEBUG] from resource zip => assets/Resources/ui/common/WebView.js
 [DEBUG] from resource zip => assets/Resources/ui/handheld/android/ApplicationWindow.js
-[DEBUG] from resource zip => assets/Resources/ui/handheld/ApplicationWindow.js
+[DEBUG] from resource zip => assets/Resources/ui/handheld/ios/ApplicationWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/tablet/ApplicationWindow.js
 [DEBUG] from resource zip => assets/Resources/KS_nav_ui.png
 [DEBUG] from resource zip => assets/Resources/KS_nav_views.png
@@ -124,6 +124,6 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.017130 seconds on emulator to get ready
+[DEBUG] waited 0.016365 seconds on emulator to get ready
 [INFO] Installing application on device
 [INFO] Application installed. Launch from drawer on Home Screen
